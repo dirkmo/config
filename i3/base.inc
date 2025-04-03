@@ -33,6 +33,14 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioPlay exec playerctl play-pause
+
+# move tiling windows via drag & drop by left-clicking into the title bar,
+# or left-clicking anywhere into the window while holding the floating modifier.
+tiling_drag modifier titlebar
+
+# lock screen
+bindsym $mod+Control+Mod1+l exec i3lock
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -143,3 +151,8 @@ workspace $ws7 output $MON2
 workspace $ws8 output $MON2
 workspace $ws9 output $MON2
 workspace $ws10 output $MON2
+
+bindsym $mod+less workspace prev
+bindsym $mod+Shift+less workspace next
+
+workspace_auto_back_and_forth yes

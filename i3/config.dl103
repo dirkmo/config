@@ -1,0 +1,44 @@
+# i3 config file (v4)
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+set $mod Mod4
+
+set $refresh_i3status killall -SIGUSR1 i3status
+
+set $ws1 "1: mail"
+set $ws2 "2: code"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6: teams"
+set $ws7 "7: term"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10: prv"
+
+set $MON1 "HDMI-2"
+set $MON2 "HDMI-3"
+
+assign [class="firefox_firefox" instance = "Navigator"] $ws1
+assign [class="Chromium" instance = "crx_cifhbcnohmdccbgoicgdjpfamggdegmo"] $ws6
+
+# autostart
+exec --no-startup-id firefox
+exec --no-startup-id teams-start.sh
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id gnome-keyring-daemon --start --daemonize --components=pkcs11,secrets,ssh
+
+include base.inc
+include startup.inc
+
+bar {
+        status_command i3status
+}
+
+
+# exec_always --no-startup-id pgrep -f '^alacritty --class fm,fm' || alacritty --class fm,fm -e ranger
+# exec_always --no-startup-id pgrep -f '^alacritty --class pulse,pulse' || alacritty --class pulse,pulse -e pulsemixer
+# bindsym $mod+m [class="fm"] scratchpad show; move position center
+# bindsym $mod+p [class="pulse"] scratchpad show; move position center
+# for_window [class="fm"] floating enable, resize set 1500 900, move scratchpad
+# for_window [class="pulse"] floating enable, resize set 1000 500, move scratchpad
