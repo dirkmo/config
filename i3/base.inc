@@ -1,8 +1,7 @@
-font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono 12
 
-gaps inner 3
-gaps outer 3
-
+gaps inner 0
+gaps outer 0
 
 # change focus
 bindsym $mod+h focus left
@@ -51,24 +50,16 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
+# start i3-dmenu-desktop (for .desktop files only)
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# split in horizontal orientation
-bindsym $mod+g split h
-
-# split in vertical orientation
-bindsym $mod+v split v
+# change split orientation
+bindsym $mod+v split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
