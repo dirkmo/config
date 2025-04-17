@@ -1,0 +1,7 @@
+#!/bin/sh
+
+WID=$(xdo id)
+
+if [ $(printf "No\nYes" | dmenu -w $WID -i -p "$1") == "Yes" ]; then
+    $2
+fi
