@@ -7,6 +7,7 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 /home/dirk/build/suckless/dwm-bar/dwm_bar.sh &
 feh --bg-scale $(~/.local/bin/bing-wallpaper.sh)
 dunst &
+numlockx on
 
 exec dwm
 
