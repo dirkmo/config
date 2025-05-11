@@ -3,10 +3,10 @@
 MON1=DisplayPort-0
 MON2=DisplayPort-1
 
-if [ "$HOSTNAME" == dl* ]; then
-    MON1=HDMI-2
-    MON2=HDMI-3
-fi
+case $HOSTNAME in
+  dl*)  MON1=HDMI-2
+        MON2=HDMI-3 ;;
+esac
 
 xrandr --output $MON2 --auto --right-of $MON1
 

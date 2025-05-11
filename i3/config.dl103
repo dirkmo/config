@@ -37,8 +37,8 @@ bar {
 }
 
 bindsym $mod+$alt+e exec --no-startup-id gvim ~/.local/config/i3
-bindsym $mod+m exec --no-startup-id monitor-dual.sh
-bindsym $mod+shift+m exec --no-startup-id monitor-single.sh
+bindsym $mod+y exec --no-startup-id ~/.local/config/scripts/monitor-dual.sh
+bindsym $mod+shift+y exec --no-startup-id ~/.local/config/scripts/monitor-single.sh
 bindsym Print exec --no-startup-id maim -s "/home/moeller/Pictures/Screenshots/$(date "+%Y.%m.%d_%R:%S").jpg"
 
 # exec_always --no-startup-id pgrep -f '^alacritty --class fm,fm' || alacritty --class fm,fm -e ranger
